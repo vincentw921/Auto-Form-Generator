@@ -18,6 +18,7 @@ class Question {
             // create quetsion option
             this.answerButtons[i] = document.createElement("input");
             this.answerButtons[i].type = "radio";
+            this.answerButtons[i].name = this.question;
             this.answerButtons[i].id = this.answers[i];
             this.answerButtons[i].setAttribute("value", this.answers[i]);
             form.appendChild(this.answerButtons[i]);
@@ -63,11 +64,12 @@ class Form {
         this.button.type = "submit";
         this.button.id = this.answer;
         this.button.innerHTML = "Submit";
-        this.button.onclick = (function checkAnswer() {console.log(checkSelected())})
+        // this.button.onclick = (function checkAnswer() {saveSelected()})
+        this.button.onclick = (function checkAnswer() {console.log("PENIS")});
         startForm.appendChild(this.button);
         document.body.appendChild(startForm);
     }
-    checkSelected() {
+    saveSelected() {
         let sum = 0;
         for (let i = 0; i < this.questions.length; i++) {
             console.log("Checking");
@@ -83,7 +85,8 @@ let q1 = new Question("What is Vincent eating?", "pizza", "mac and cheese",
 "spagetti", "ice cream");
 let q2 = new Question("What is Vincent doing?", "Nothing", "Homework", "Eating", "Sleeping");
 let q3 = new Question("What is Vincent's favorite color?", "Blue", "Yellow", "Red", "Green");
-let q4 = new Question("Does Vincent have a gf", "Yes :)", "No :(");
-let questions = [q1, q2, q3, q4];
-let answers = ["ice cream", "Nothing", "Blue", "No :("];
+let q4 = new Question("Does Vincent have a gf?", "Yes :)", "No :(");
+let q5 = new Question("Does Vincent Lin have a life?", "No :(", "No :(");
+let questions = [q1, q2, q3, q4, q5];
+let answers = ["ice cream", "Nothing", "Blue", "No :(", "No :("];
 let form1 = new Form(answers, questions);
