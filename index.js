@@ -10,6 +10,7 @@ class Question {
     display(form) {
         // create question
         let q = document.createElement("p");
+        q.id = this.question;
         q.innerHTML = this.question;
         form.appendChild(q);
         // create answer selections
@@ -52,6 +53,20 @@ class Form {
         this.answers = answers;
         this.questions = questions;
         this.createForm();
+        for (let question = 0; question < this.questions.length; question++) {
+            if (question % 2 == 0) {
+                document.getElementById(this.questions[question].question).classList.add("qevenhead");
+            } else {
+                document.getElementById(this.questions[question].question).classList.add("qoddhead");
+            }
+            for (let answer = 0; answer < this.questions[question].answers.length; answer++) {
+                if (question % 2 == 0) {
+                    document.getElementById(this.questions[question].answers[answer]).classList.add("qeven");
+                } else {
+                    document.getElementById(this.questions[question].answers[answer]).classList.add("qodd");
+                }
+            }
+        }
     }
 
     createForm() {

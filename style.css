@@ -1,0 +1,37 @@
+head  {
+    background-color: azure;
+    text-align: center;
+}
+
+body {
+    background-color: gray;
+    text-align: center;
+}
+
+input {
+    background-color: ghostwhite;
+}
+
+form {
+    background-color: silver;
+}
+
+.qeven {
+    background-color: antiquewhite;
+    font-size: medium;
+}
+
+.qevenhead {
+    background-color: antiquewhite;
+    font-size: larger;
+}
+
+.qodd {
+    background-color: aliceblue;
+    font-size: medium;
+}
+
+.qoddhead {
+    background-color: aliceblue;
+    font-size: larger;
+}
